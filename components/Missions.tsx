@@ -14,6 +14,7 @@ const MISSIONS = [
     client: "ScanEvent",
     location: "Alger, Algérie",
     title: "Audit sécurité application web & mobile",
+    status: "En cours",
     method: [
       "Cartographie des API et des flux d'authentification",
       "Vérification des contrôles d'accès et de la gestion des sessions",
@@ -26,6 +27,7 @@ const MISSIONS = [
     client: "TIIM",
     location: "Burkina Faso",
     title: "Audit de vulnérabilités web",
+    status: "Terminée",
     method: [
       "Analyse des en-têtes de sécurité HTTP",
       "Étude de la gestion des sessions utilisateurs",
@@ -38,6 +40,7 @@ const MISSIONS = [
     client: "Next-Git",
     location: "À distance",
     title: "SOC automatisé — détection & corrélation",
+    status: "En cours",
     method: [
       "Déploiement de sondes de détection Suricata, Snort et Zeek",
       "Mise en place de FAIL2BAN pour le blocage automatique",
@@ -50,6 +53,7 @@ const MISSIONS = [
     client: "Lab personnel",
     location: "Alger, Algérie",
     title: "Serveur Ubuntu durci de bout en bout",
+    status: "Terminée",
     method: [
       "Configuration sécurisée DNS et SSH (clés, durcissement)",
       "Déploiement Apache avec HTTPS et certificats SSL/TLS",
@@ -62,6 +66,7 @@ const MISSIONS = [
     client: "Soft-Consulting",
     location: "Ouagadougou, Burkina Faso",
     title: "Stage — administration systèmes & réseaux",
+    status: "Terminée",
     method: [
       "Gestion quotidienne de l'infrastructure systèmes et réseau",
       "Support et maintenance des environnements de production",
@@ -132,9 +137,17 @@ function MissionCard({
         <span className="text-pink-300">Dossier N°{mission.id}</span>
         <span className="h-1 w-1 rounded-full bg-zinc-600" />
         <span>{mission.location}</span>
-        <span className="ml-auto flex items-center gap-2 text-emerald-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Terminée
+        <span
+          className={`ml-auto flex items-center gap-2 ${
+            mission.status === "Terminée" ? "text-emerald-400" : "text-amber-400"
+          }`}
+        >
+          <span
+            className={`h-1.5 w-1.5 rounded-full ${
+              mission.status === "Terminée" ? "bg-emerald-400" : "bg-amber-400"
+            }`}
+          />
+          {mission.status}
         </span>
       </div>
 

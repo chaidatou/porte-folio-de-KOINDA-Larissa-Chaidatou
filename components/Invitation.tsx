@@ -3,6 +3,9 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,16 +16,29 @@ const CONTACTS = [
     label: "Email",
     value: "koindalarissa@gmail.com",
     href: "mailto:koindalarissa@gmail.com",
+    icon: faEnvelope,
+    external: false,
   },
   {
     label: "Téléphone",
     value: "+213 670 43 68 07",
     href: "tel:+213670436807",
+    icon: faPhone,
+    external: false,
   },
   {
     label: "LinkedIn",
     value: "koinda-larissa-chaidatou",
     href: "https://www.linkedin.com/in/koinda-larissa-chaidatou/",
+    icon: faLinkedin,
+    external: true,
+  },
+  {
+    label: "GitHub",
+    value: "chaidatou",
+    href: "https://github.com/chaidatou",
+    icon: faGithub,
+    external: true,
   },
 ];
 
@@ -70,19 +86,23 @@ export default function Invitation() {
           </h2>
         </div>
 
-        <div data-reveal className="flex flex-col gap-6">
+        <div data-reveal className="flex flex-col gap-6 sm:flex-row sm:gap-10">
           {CONTACTS.map((contact) => (
             <a
               key={contact.label}
               href={contact.href}
-              target={contact.label === "LinkedIn" ? "_blank" : undefined}
-              rel={contact.label === "LinkedIn" ? "noopener noreferrer" : undefined}
-              className="group flex flex-col items-center"
+              target={contact.external ? "_blank" : undefined}
+              rel={contact.external ? "noopener noreferrer" : undefined}
+              className="group flex flex-col items-center gap-2"
             >
+              <FontAwesomeIcon
+                icon={contact.icon}
+                className="h-4 w-4 text-pink-300 transition-colors group-hover:text-pink-200"
+              />
               <span className="font-mono text-xs uppercase tracking-widest text-zinc-500">
                 {contact.label}
               </span>
-              <span className="mt-1 text-lg text-zinc-200 transition-colors group-hover:text-pink-300 sm:text-xl">
+              <span className="text-sm text-zinc-200 transition-colors group-hover:text-pink-300 sm:text-base">
                 {contact.value}
               </span>
             </a>
@@ -96,7 +116,7 @@ export default function Invitation() {
           className="inline-flex items-center gap-2 rounded-full border border-pink-300/40 px-8 py-3 text-sm uppercase tracking-widest text-pink-100 transition-colors hover:border-pink-300 hover:bg-pink-500/10"
         >
           Télécharger mon CV
-          <span aria-hidden="true">↓</span>
+          <FontAwesomeIcon icon={faDownload} className="h-3.5 w-3.5" />
         </a>
       </div>
     </section>

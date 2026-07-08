@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import CursorTrail from "@/components/CursorTrail";
+import Nav from "@/components/Nav";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
+
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +41,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#0a0714]">
         <CursorTrail />
+        <Nav />
         {children}
       </body>
     </html>

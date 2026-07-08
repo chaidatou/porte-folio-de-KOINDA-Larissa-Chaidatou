@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const LOCK_PATH =
   "M32,52 L32,34 A18,18 0 0 1 68,34 L68,52 " +
@@ -115,7 +117,7 @@ export default function IntroScreen() {
     <div ref={overlayRef} className="fixed inset-0 z-50 overflow-hidden bg-[#0a0714]">
       {phase !== "fallback" && (
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-contain sm:object-cover"
           src="/videos/intro-larissa.mp4"
           autoPlay
           muted
@@ -146,7 +148,7 @@ export default function IntroScreen() {
           className="mt-10 inline-flex items-center gap-2 rounded-full border border-pink-300/40 px-8 py-3 text-sm uppercase tracking-widest text-pink-100 opacity-0 transition-colors hover:border-pink-300 hover:bg-pink-500/10"
         >
           Entrer
-          <span aria-hidden="true">→</span>
+          <FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5" />
         </button>
       </div>
     </div>

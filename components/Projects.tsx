@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -114,17 +116,22 @@ function ProjectItem({
       </p>
 
       {project.note && (
-        <p className="max-w-2xl text-xs text-zinc-500 sm:text-sm">
-          ⚠ Confidentialité : {project.note}
+        <p className="flex max-w-2xl items-start gap-2 text-xs text-zinc-500 sm:text-sm">
+          <FontAwesomeIcon
+            icon={faTriangleExclamation}
+            className="mt-0.5 h-3 w-3 shrink-0 text-pink-300/70"
+          />
+          Confidentialité : {project.note}
         </p>
       )}
 
       {project.link && (
         <a
           href={project.link.href}
-          className="text-sm text-pink-300 underline-offset-4 hover:underline"
+          className="inline-flex items-center gap-2 text-sm text-pink-300 underline-offset-4 hover:underline"
         >
-          {project.link.label} →
+          {project.link.label}
+          <FontAwesomeIcon icon={faArrowRight} className="h-3 w-3" />
         </a>
       )}
     </div>
