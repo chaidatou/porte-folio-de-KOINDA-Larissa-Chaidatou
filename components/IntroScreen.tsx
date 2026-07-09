@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -80,11 +80,29 @@ function LockParticles({ active }: { active: boolean }) {
 
 type Phase = "video" | "fallback" | "text";
 
+// Si la vidéo n'a rien joué après ce délai (connexion lente/bloquée), on bascule
+// sur le fallback animé plutôt que de laisser l'écran d'accueil figé.
+const VIDEO_STALL_TIMEOUT = 4500;
+// Temps de lecture du texte poétique avant l'entrée automatique dans le site.
+const AUTO_ADVANCE_DELAY = 2600;
+
 export default function IntroScreen() {
   const [phase, setPhase] = useState<Phase>("video");
   const [visible, setVisible] = useState(true);
   const overlayRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const hasStartedRef = useRef(false);
+  const hasEnteredRef = useRef(false);
+
+  // Filet de sécurité : si la vidéo ne démarre jamais (réseau lent, format
+  // non supporté sans erreur explicite), on ne reste pas bloqué dessus.
+  useEffect(() => {
+    if (phase !== "video") return;
+    const timer = setTimeout(() => {
+      if (!hasStartedRef.current) setPhase("fallback");
+    }, VIDEO_STALL_TIMEOUT);
+    return () => clearTimeout(timer);
+  }, [phase]);
 
   useEffect(() => {
     if (phase !== "fallback") return;
@@ -101,15 +119,29 @@ export default function IntroScreen() {
     );
   }, [phase]);
 
-  const handleEnter = () => {
-    if (!overlayRef.current) return;
+  const handleEnter = useCallback(() => {
+    if (!overlayRef.current || hasEnteredRef.current) return;
+    hasEnteredRef.current = true;
+    // On libère les clics vers le contenu dès le début du fondu : la
+    // continuité doit se sentir comme un seul mouvement, pas une attente.
+    overlayRef.current.style.pointerEvents = "none";
     gsap.to(overlayRef.current, {
       opacity: 0,
-      duration: 0.9,
+      scale: 1.04,
+      filter: "blur(6px)",
+      duration: 1.1,
       ease: "power2.inOut",
       onComplete: () => setVisible(false),
     });
-  };
+  }, []);
+
+  // Enchaînement automatique : une fois le texte affiché, on entre dans le
+  // site sans action requise. Le bouton reste disponible pour accélérer.
+  useEffect(() => {
+    if (phase !== "text") return;
+    const timer = setTimeout(handleEnter, AUTO_ADVANCE_DELAY);
+    return () => clearTimeout(timer);
+  }, [phase, handleEnter]);
 
   if (!visible) return null;
 
@@ -118,10 +150,15 @@ export default function IntroScreen() {
       {phase !== "fallback" && (
         <video
           className="absolute inset-0 h-full w-full object-contain sm:object-cover"
-          src="/videos/intro-larissa.mp4"
+          poster="/videos/intro-poster.jpg"
+          preload="auto"
           autoPlay
           muted
           playsInline
+          src="/videos/intro-larissa.mp4"
+          onPlaying={() => {
+            hasStartedRef.current = true;
+          }}
           onEnded={() => setPhase("text")}
           onError={() => setPhase("fallback")}
         />
@@ -140,14 +177,14 @@ export default function IntroScreen() {
           phase === "text" ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
-        <h1 className="max-w-2xl font-serif text-3xl leading-snug text-transparent opacity-0 sm:text-5xl bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text">
+        <h1 className="max-w-2xl font-serif text-3xl leading-snug text-white opacity-0 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)] sm:text-5xl">
           Vos données viennent d&apos;entrer en zone sécurisée.
         </h1>
         <button
           onClick={handleEnter}
           className="mt-10 inline-flex items-center gap-2 rounded-full border border-pink-300/40 px-8 py-3 text-sm uppercase tracking-widest text-pink-100 opacity-0 transition-colors hover:border-pink-300 hover:bg-pink-500/10"
         >
-          Entrer
+          Continuer
           <FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5" />
         </button>
       </div>

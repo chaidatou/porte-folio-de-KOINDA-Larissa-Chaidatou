@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const STATS = [
   { value: 6, suffix: "+", label: "audits réels" },
@@ -70,13 +72,23 @@ function StatCounter({
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center gap-16 bg-[#0a0714] px-6 py-24 text-center">
-      <div>
-        <h1 className="bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl">
-          Larissa Koinda
-        </h1>
-        <p className="mt-4 text-lg text-zinc-300 sm:text-xl">
-          Cybersecurity Analyst · CCNA · Future CEH
-        </p>
+      <div className="flex flex-col items-center gap-8">
+        <div>
+          <h1 className="bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
+            Larissa Chaidatou Koinda
+          </h1>
+          <p className="mt-4 text-lg text-zinc-300 sm:text-xl">
+            Analyste en Cybersécurité · CCNA · Future CEH
+          </p>
+        </div>
+        <a
+          href="/CV-Larissa-Koinda.pdf"
+          download
+          className="inline-flex items-center gap-2 rounded-full border border-pink-300/40 px-6 py-2.5 text-sm uppercase tracking-widest text-pink-100 transition-colors hover:border-pink-300 hover:bg-pink-500/10"
+        >
+          Télécharger mon CV
+          <FontAwesomeIcon icon={faDownload} className="h-3.5 w-3.5" />
+        </a>
       </div>
       <div className="grid grid-cols-2 gap-x-10 gap-y-12 sm:grid-cols-4 sm:gap-x-16">
         {STATS.map((stat) => (

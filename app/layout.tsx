@@ -24,9 +24,54 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
 });
 
+const siteUrl = "https://porte-folio-de-koinda-larissa-chaid.vercel.app";
+const siteTitle = "Larissa Chaidatou Koinda — Analyste en Cybersécurité | Portfolio";
+const siteDescription =
+  "Portfolio de Larissa Chaidatou Koinda, analyste en cybersécurité basée à Alger, Algérie. Certifiée CCNA, future CEH — missions réelles, projets et arsenal technique en sécurité informatique.";
+
 export const metadata: Metadata = {
-  title: "Larissa Koinda — Cybersecurity Analyst",
-  description: "Portfolio de Larissa Koinda, analyste en cybersécurité.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: "%s | Larissa Chaidatou Koinda",
+  },
+  description: siteDescription,
+  keywords: [
+    "Larissa Chaidatou Koinda",
+    "Larissa Koinda",
+    "analyste en cybersécurité",
+    "cybersecurity analyst",
+    "CCNA",
+    "CEH",
+    "Alger",
+    "Algérie",
+    "portfolio cybersécurité",
+    "pentest",
+    "SOC",
+  ],
+  authors: [{ name: "Larissa Chaidatou Koinda" }],
+  creator: "Larissa Chaidatou Koinda",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    type: "profile",
+    url: siteUrl,
+    siteName: "Larissa Chaidatou Koinda — Portfolio",
+    title: siteTitle,
+    description: siteDescription,
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
