@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  verification: {
+    google: "JREuvTpdooasTWHEDiKhtRDyQoiaD2DU68lOi4EthCU",
+  },
   openGraph: {
     type: "profile",
     firstName: "Larissa Chaidatou",
