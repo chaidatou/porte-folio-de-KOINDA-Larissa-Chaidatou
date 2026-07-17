@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import CursorTrail from "@/components/CursorTrail";
 import Nav from "@/components/Nav";
+import FloatingProfile from "@/components/FloatingProfile";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 
@@ -61,6 +62,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile",
+    firstName: "Larissa Chaidatou",
+    lastName: "Koinda",
     url: siteUrl,
     siteName: "Larissa Chaidatou Koinda — Portfolio",
     title: siteTitle,
@@ -87,6 +90,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#0a0714]">
         <CursorTrail />
         <Nav />
+        <FloatingProfile />
         {children}
       </body>
     </html>

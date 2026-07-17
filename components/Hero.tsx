@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import CyberGrid from "@/components/CyberGrid";
 
 const STATS = [
   { value: 6, suffix: "+", label: "audits réels" },
@@ -72,7 +73,8 @@ function StatCounter({
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center gap-16 bg-[#0a0714] px-6 py-24 text-center">
-      <div className="flex flex-col items-center gap-8">
+      <CyberGrid />
+      <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-8">
         <div>
           <h1 className="bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
             Larissa Chaidatou Koinda
@@ -84,7 +86,7 @@ export default function Hero() {
         <a
           href="/CV-Larissa-Koinda.pdf"
           download
-          className="inline-flex items-center gap-2 rounded-full border border-pink-300/40 px-6 py-2.5 text-sm uppercase tracking-widest text-pink-100 transition-colors hover:border-pink-300 hover:bg-pink-500/10"
+          className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 px-6 py-3 text-sm font-medium uppercase tracking-widest text-white shadow-[0_8px_24px_rgba(217,70,239,0.35)] transition-transform hover:scale-105"
         >
           Télécharger mon CV
           <FontAwesomeIcon icon={faDownload} className="h-3.5 w-3.5" />

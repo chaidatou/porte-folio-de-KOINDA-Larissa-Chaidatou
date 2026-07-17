@@ -131,7 +131,10 @@ export default function IntroScreen() {
       filter: "blur(6px)",
       duration: 1.1,
       ease: "power2.inOut",
-      onComplete: () => setVisible(false),
+      onComplete: () => {
+        setVisible(false);
+        window.dispatchEvent(new Event("intro:complete"));
+      },
     });
   }, []);
 

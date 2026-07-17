@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import CyberGrid from "@/components/CyberGrid";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -76,6 +77,7 @@ export default function Invitation() {
       id="invitation"
       className="relative bg-[#0a0714] px-6 py-32 text-center"
     >
+      <CyberGrid />
       <div ref={sectionRef} className="mx-auto flex max-w-2xl flex-col items-center gap-14">
         <div data-reveal>
           <p className="font-mono text-sm uppercase tracking-[0.3em] text-pink-300">

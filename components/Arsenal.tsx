@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CyberGrid from "@/components/CyberGrid";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -125,6 +126,7 @@ function ArsenalCategory({
 export default function Arsenal() {
   return (
     <section id="arsenal" className="relative bg-[#0a0714] px-6 py-32">
+      <CyberGrid />
       <div className="mx-auto mb-20 max-w-3xl text-center">
         <p className="font-mono text-sm uppercase tracking-[0.3em] text-pink-300">
           Arsenal
