@@ -132,7 +132,7 @@ export default function Arsenal() {
           Arsenal
         </p>
         <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-          Les outils que je maîtrise
+          Les outils que nous maîtrisons
         </h2>
       </div>
       <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">

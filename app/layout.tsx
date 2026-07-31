@@ -26,9 +26,10 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const siteUrl = "https://porte-folio-de-koinda-larissa-chaid.vercel.app";
-const siteTitle = "Larissa Chaidatou Koinda — Analyste en Cybersécurité | Portfolio";
+const siteTitle =
+  "Larissa Koinda — Audit Sécurité & Pentest pour Startups et Entreprises";
 const siteDescription =
-  "Portfolio de Larissa Chaidatou Koinda, analyste en cybersécurité basée à Alger, Algérie. Certifiée CCNA, future CEH — missions réelles, projets et arsenal technique en sécurité informatique.";
+  "Cabinet de cybersécurité spécialisé audit, pentest et sécurisation de serveurs. Nous protégeons les startups et entreprises. Consultation gratuite. Alger & remote.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -49,6 +50,10 @@ export const metadata: Metadata = {
     "portfolio cybersécurité",
     "pentest",
     "SOC",
+    "audit sécurité startup",
+    "sécurisation serveur",
+    "cabinet cybersécurité",
+    "pentest startup",
   ],
   authors: [{ name: "Larissa Chaidatou Koinda" }],
   creator: "Larissa Chaidatou Koinda",

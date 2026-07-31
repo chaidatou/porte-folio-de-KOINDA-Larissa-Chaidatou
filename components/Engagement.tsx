@@ -13,12 +13,12 @@ const HIGHLIGHTS = [
   {
     title: "Récupération de comptes & données",
     description:
-      "J'accompagne celles et ceux qui ont perdu l'accès à leurs comptes ou souhaitent supprimer des données indésirables.",
+      "Nous accompagnons celles et ceux qui ont perdu l'accès à leurs comptes ou souhaitent supprimer des données indésirables.",
   },
   {
     title: "Prévention anti-arnaques",
     description:
-      "J'apprends aux participants à repérer les pièges avant qu'ils ne fassent des dégâts.",
+      "Nous apprenons aux participants à repérer les pièges avant qu'ils ne fassent des dégâts.",
   },
   {
     title: "Formations gratuites & certifiées",
@@ -86,7 +86,7 @@ export default function Engagement() {
           Rendre la cybersécurité accessible à tous
         </h2>
         <p className="mt-6 text-zinc-400">
-          Formatrice en protection des données et anti-arnaques, j&apos;aide
+          Formatrice en protection des données et anti-arnaques, nous aidons
           celles et ceux qu&apos;on oublie souvent à reprendre le contrôle de
           leurs informations personnelles.
         </p>

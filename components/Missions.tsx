@@ -193,11 +193,11 @@ export default function Missions() {
           Missions terrain
         </p>
         <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-          Ce que j&apos;ai fait, sur le terrain
+          Ce que nous avons fait, sur le terrain
         </h2>
         <p className="mt-4 text-zinc-400">
-          Par confidentialité, je ne partage jamais les failles trouvées chez
-          mes clients — seulement ma méthode et mon rôle.
+          Par confidentialité, nous ne partageons jamais les failles trouvées
+          chez nos clients — seulement notre méthode et notre rôle.
         </p>
       </div>
       <div className="mx-auto flex max-w-5xl flex-col gap-16">

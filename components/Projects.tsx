@@ -31,7 +31,7 @@ const PROJECTS: Project[] = [
     title: "Mini SOC automatisé",
     status: "Déployé",
     description:
-      "Un centre de surveillance de sécurité que j'ai conçu et déployé moi-même. Il collecte les logs en continu, détecte les activités anormales et déclenche des alertes automatisées en temps réel. Un système opérationnel, pas un exercice théorique.",
+      "Un centre de surveillance de sécurité que nous avons conçu et déployé nous-mêmes. Il collecte les logs en continu, détecte les activités anormales et déclenche des alertes automatisées en temps réel. Un système opérationnel, pas un exercice théorique.",
     tools: [
       "Collecte de logs",
       "Détection d'anomalies",
@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
     title: "Plateforme d'apprentissage cybersécurité pour les filles africaines",
     status: "Projet de soutenance",
     description:
-      "Une plateforme pensée pour démocratiser la cybersécurité auprès des jeunes filles africaines : formation technique, sensibilisation, accompagnement. Mon projet de cœur — armer celles qu'on n'attend jamais dans ce domaine.",
+      "Une plateforme pensée pour démocratiser la cybersécurité auprès des jeunes filles africaines : formation technique, sensibilisation, accompagnement. Notre projet de cœur — armer celles qu'on n'attend jamais dans ce domaine.",
     tools: ["Formation", "Inclusion numérique", "Impact social"],
   },
   {
@@ -52,7 +52,7 @@ const PROJECTS: Project[] = [
     title: "Ce portfolio immersif",
     status: "En ligne",
     description:
-      "Une expérience numérique conçue de la première idée au dernier pixel : écran d'accueil animé, narration par scènes, animations. La preuve vivante que je porte une vision créative de bout en bout — cybersécurité ET design d'expérience.",
+      "Une expérience numérique conçue de la première idée au dernier pixel : écran d'accueil animé, narration par scènes, animations. La preuve vivante que nous portons une vision créative de bout en bout — cybersécurité ET design d'expérience.",
     tools: ["Next.js", "Animations", "Design immersif", "Création vidéo IA"],
     github: [
       {
@@ -66,9 +66,9 @@ const PROJECTS: Project[] = [
     title: "Audits & labs de sécurité terrain",
     status: "Terrain",
     description:
-      "Des audits menés sur des applications réelles en production, selon les standards OWASP : analyse, tests, rapports livrés, remédiation accompagnée. Des systèmes plus solides après mon passage.",
+      "Des audits menés sur des applications réelles en production, selon les standards OWASP : analyse, tests, rapports livrés, remédiation accompagnée. Des systèmes plus solides après notre passage.",
     tools: ["OWASP", "Tests d'intrusion", "Rapports", "Remédiation"],
-    note: "Je montre ma méthode et ce que j'ai fait, jamais les failles trouvées chez mes clients.",
+    note: "Nous montrons notre méthode et ce que nous avons fait, jamais les failles trouvées chez nos clients.",
     link: { label: "Voir le détail des missions", href: "#missions" },
   },
   {
@@ -214,7 +214,7 @@ export default function Projects() {
           Projets
         </p>
         <h2 className="mt-4 bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text font-serif text-3xl italic text-transparent sm:text-4xl">
-          Je ne dis pas ce que je sais faire. Je le construis.
+          Nous ne disons pas ce que nous savons faire. Nous le construisons.
         </h2>
       </div>
 

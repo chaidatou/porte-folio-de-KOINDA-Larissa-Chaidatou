@@ -81,12 +81,24 @@ export default function Invitation() {
       <div ref={sectionRef} className="mx-auto flex max-w-2xl flex-col items-center gap-14">
         <div data-reveal>
           <p className="font-mono text-sm uppercase tracking-[0.3em] text-pink-300">
-            L&apos;invitation
+            Contact
           </p>
           <h2 className="mt-4 bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
-            Parlons de vos systèmes.
+            La prochaine faille de votre serveur n&apos;attend pas.
           </h2>
+          <p className="mt-4 text-zinc-400">
+            Parlons de votre sécurité. C&apos;est gratuit et sans engagement.
+          </p>
         </div>
+
+        <a
+          data-reveal
+          href="mailto:koindalarissa@gmail.com?subject=Demande%20de%20consultation%20s%C3%A9curit%C3%A9%20-%20%5BNom%20de%20votre%20entreprise%5D"
+          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 px-8 py-4 text-sm font-medium uppercase tracking-widest text-white shadow-[0_8px_24px_rgba(217,70,239,0.35)] transition-transform hover:scale-105"
+        >
+          Réserver notre consultation gratuite
+          <FontAwesomeIcon icon={faEnvelope} className="h-3.5 w-3.5" />
+        </a>
 
         <div data-reveal className="flex flex-col gap-6 sm:flex-row sm:gap-10">
           {CONTACTS.map((contact) => (
@@ -117,9 +129,17 @@ export default function Invitation() {
           download
           className="inline-flex items-center gap-2 rounded-full border border-pink-300/40 px-8 py-3 text-sm uppercase tracking-widest text-pink-100 transition-colors hover:border-pink-300 hover:bg-pink-500/10"
         >
-          Télécharger mon CV
+          Télécharger le CV
           <FontAwesomeIcon icon={faDownload} className="h-3.5 w-3.5" />
         </a>
+
+        <p
+          data-reveal
+          className="max-w-xl text-sm leading-relaxed text-zinc-500"
+        >
+          Nous ne livrons pas un rapport et nous disparaissons. Nous restons
+          jusqu&apos;à ce que votre infrastructure soit vraiment sécurisée.
+        </p>
       </div>
     </section>
   );

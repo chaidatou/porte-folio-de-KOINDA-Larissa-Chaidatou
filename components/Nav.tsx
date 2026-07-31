@@ -5,12 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const NAV_LINKS = [
+  { href: "#services", label: "Services" },
   { href: "#missions", label: "Missions" },
   { href: "#projects", label: "Projets" },
   { href: "#methode", label: "Méthode" },
   { href: "#arsenal", label: "Arsenal" },
   { href: "#engagement", label: "Engagement" },
   { href: "#parcours", label: "Parcours" },
+  { href: "#tarifs", label: "Tarifs" },
   { href: "#invitation", label: "Contact" },
 ];
 
@@ -27,7 +29,7 @@ export default function Nav() {
           Larissa Koinda
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm text-zinc-300 sm:flex">
+        <nav className="hidden items-center gap-5 text-sm text-zinc-300 lg:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -42,14 +44,14 @@ export default function Nav() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-pink-400/25 text-pink-200 sm:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-pink-400/25 text-pink-200 lg:hidden"
         >
           <FontAwesomeIcon icon={open ? faXmark : faBars} className="h-4 w-4" />
         </button>
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-pink-400/10 bg-[#0a0714] px-6 py-4 sm:hidden">
+        <nav className="flex flex-col gap-1 border-t border-pink-400/10 bg-[#0a0714] px-6 py-4 lg:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}

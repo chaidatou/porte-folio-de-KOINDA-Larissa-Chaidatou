@@ -64,8 +64,8 @@ export default function FloatingProfile() {
           >
             <FontAwesomeIcon icon={faXmark} className="h-2.5 w-2.5" />
           </button>
-          Bienvenue dans mon univers 💜 Je suis Larissa Koinda — analyste en
-          cybersécurité.
+          Bienvenue dans notre univers 💜 Nous sommes le cabinet de Larissa
+          Koinda — analyste en cybersécurité.
           <span
             aria-hidden="true"
             className="absolute -bottom-1.5 right-8 h-3 w-3 rotate-45 border-b border-r border-pink-400/25 bg-[#150c26]/90"

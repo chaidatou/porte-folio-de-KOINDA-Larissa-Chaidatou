@@ -88,7 +88,7 @@ export default function Method() {
           Méthode
         </p>
         <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-          Mon processus, à chaque mission
+          Notre processus technique, à chaque mission
         </h2>
       </div>
 
